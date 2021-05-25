@@ -283,9 +283,10 @@ body {
   text-align: left;
   color: #6B7989;
   border: none;
-  margin-left: 14.7%;
-  margin-top: 15px;
-  margin-bottom: 13px;
+  border-radius: 30em;
+  padding-left: 14.7%;
+  padding-top: 15px;
+  padding-bottom: 13px;
 }
 
 .search div .magnifier {
@@ -332,7 +333,7 @@ body {
   }
   .search div input {
     color: #9CAFC3;
-    margin-left: 54px;
+    padding-left: 54px;
   }
   .trending h2 {
     font-size: 18px;
