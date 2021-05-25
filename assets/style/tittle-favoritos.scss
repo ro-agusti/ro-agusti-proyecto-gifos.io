@@ -1,0 +1,39 @@
+@import "_variables.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  list-style: none;
+}
+.icono-gifos{
+    width: 28px;
+    margin: auto;
+  }
+.tittle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 47px;
+  h1 {
+    font-family: $primary-font-family;
+    font-size: 25px;
+    color: $primary-color;
+    text-align: center;
+    line-height: 33px;
+    font-weight: bold;
+  }
+}
+@media screen and (min-width: 780px) {
+  .tittle {
+    margin-top: 76px;
+    height: 100px;
+    h1 {
+      font-size: 35px;
+      width: 33%;
+      margin: auto;
+    }
+    .corazon-favoritos {  
+      margin-top: 11px;
+    }
+  }
+}
