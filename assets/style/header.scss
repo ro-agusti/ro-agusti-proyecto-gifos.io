@@ -38,9 +38,18 @@ body {
         width: 14px;
         height: 14px;
         background-image: url(../images/burger.svg);
-        &:active {
+       /*  &:active {
           background-image: url(../images/close.svg);
-        }
+        } */
+      }
+    }
+    .burger-close{
+      display: none;
+      border: none;
+      div {
+        width: 14px;
+        height: 14px;
+        background-image: url(../images/close.svg);
       }
     }
     .menu-ul {
@@ -94,6 +103,9 @@ body {
         height: 48.8px;
       }
       .burger {
+        display: block;
+      }
+      .burger-close {
         display: block;
       }
       /* .burger_active {

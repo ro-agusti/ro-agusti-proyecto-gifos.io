@@ -51,9 +51,19 @@ body {
   width: 14px;
   height: 14px;
   background-image: url(../images/burger.svg);
+  /*  &:active {
+          background-image: url(../images/close.svg);
+        } */
 }
 
-.header .menu .burger div:active {
+.header .menu .burger-close {
+  display: none;
+  border: none;
+}
+
+.header .menu .burger-close div {
+  width: 14px;
+  height: 14px;
   background-image: url(../images/close.svg);
 }
 
@@ -130,6 +140,9 @@ body {
     height: 48.8px;
   }
   .header .menu .burger {
+    display: block;
+  }
+  .header .menu .burger-close {
     display: block;
   }
   .header .menu .menu-ul {

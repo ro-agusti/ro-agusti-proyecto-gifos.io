@@ -8,8 +8,9 @@
 .trending-gifos {
   background-color: $primary-bg;
   width: 100%;
-  height: 25%;
+  //height: 25%;
   div {
+    
     padding-top: 46px;
     padding-bottom: 37px;
     h2 {
@@ -31,10 +32,26 @@
       line-height: 23px;
     }
   }
+  .carroussel{
+    display: flex;
+    .left-arrow{
+      display: none;
+    }
+    .img-carroussel{
+      width: 243px;
+      height: 187px;
+      background-color: blueviolet;
+      //background-image: url(../images/);
+    }
+    .right-arrow{
+      display: none;
+    }
+  }
 }
 @media screen and (min-width: 780px) {
   .trending-gifos {
     div {
+      max-height: 183px;
       padding-top: 67px;
       padding-bottom: 53px;
       h2 {
@@ -44,12 +61,33 @@
         font-size: 18px;
       }
     }
-    .gifos {
+    .carroussel{
       display: grid;
-      grid-template-columns: 11% 78% 11%;
-      div {
-        display: grid;
-        grid-template-columns: repeat(3, 33.333%);
+      grid-template-columns: 0.5fr repeat(3,1fr) 0.5fr;
+      margin-left: 6.4%;
+      margin-right: 6.4%;
+      padding: 0;
+      height: 257px;
+      .left-arrow{
+        padding: 0;
+        align-self: center;
+        width: 40px;
+        height: 40px;
+        background-image: url(../images/button-slider-left.svg);
+        background-repeat: no-repeat;
+        &:hover{
+          background-image: url(../images/button-slider-left-hover.svg);
+        }
+      }
+  
+      .right-arrow{
+        width: 40px;
+        height: 40px;
+        background-image: url(../images/Button-Slider-right.svg);
+        background-repeat: no-repeat;
+        &:hover{
+          background-image: url(../images/Button-Slider-right-hover.svg);
+        }
       }
     }
   }

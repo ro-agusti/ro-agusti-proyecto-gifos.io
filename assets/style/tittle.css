@@ -22,7 +22,7 @@
           justify-content: center;
 }
 
-.tittle h1 {
+.tittle .tittle-index {
   margin: auto;
   width: 286px;
   font-family: "Montserrat", sans-serif;
@@ -33,7 +33,7 @@
   font-weight: bold;
 }
 
-.tittle h1 span {
+.tittle .tittle-index span {
   color: #5ED7C6;
 }
 
@@ -42,7 +42,7 @@
     margin-top: 76px;
     height: 100px;
   }
-  .tittle h1 {
+  .tittle .tittle-index {
     font-size: 35px;
     width: 33%;
   }
