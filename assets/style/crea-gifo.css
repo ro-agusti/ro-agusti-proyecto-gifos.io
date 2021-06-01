@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.crear-gifo .conteiner {
+  margin-left: 10.8%;
+  margin-top: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.crear-gifo .conteiner .camera {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.crear-gifo .conteiner .camera .camera-img {
+  width: 123px;
+  height: 192px;
+}
+
+.crear-gifo .conteiner .camera .luz-camara-img {
+  width: 91px;
+  height: 141px;
+}
+
+.crear-gifo .conteiner .cuadrado {
+  width: 688px;
+  height: 390px;
+  border: 1px solid #572EE5;
+}
+/*# sourceMappingURL=crea-gifo.css.map */

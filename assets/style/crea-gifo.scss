@@ -1,0 +1,32 @@
+@import "_variables.scss";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+.crear-gifo{
+    .conteiner{
+        margin-left: 10.8%;
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+        
+        .camera{
+            display: flex;
+        align-items: center;
+        .camera-img{
+            width: 123px;
+            height: 192px;
+        }
+        .luz-camara-img{
+            width: 91px;
+            height: 141px;
+        }    
+        }
+        .cuadrado{
+            width: 688px;
+            height: 390px;
+            border: 1px solid $primary-color;
+        }
+    }
+}

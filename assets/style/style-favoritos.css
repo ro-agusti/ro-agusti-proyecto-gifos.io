@@ -6,17 +6,15 @@
   list-style: none;
 }
 
-body {
+/* body {
   padding-top: 95px;
-}
-
+} */
 .header {
   border-top: #572EE5 solid 5px;
   background-color: #FFFFFF;
   width: 100%;
   top: 0;
   left: 0;
-  position: fixed;
 }
 
 .header .menu {
@@ -233,6 +231,46 @@ body {
   font-weight: bold;
 }
 
+.empty-favorite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.empty-favorite .empty-favorite_img {
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/icon-fav-sin-contenido.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.empty-favorite .empty-mis-gifos_img {
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/icon-mis-gifos-sin-contenido.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.empty-favorite .empty-favorite_title {
+  margin-top: 23.7px;
+  margin-bottom: 137px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  color: #50E3C2;
+  text-align: center;
+  line-height: 33px;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 780px) {
   .tittle {
     margin-top: 76px;
@@ -245,6 +283,19 @@ body {
   }
   .tittle .corazon-favoritos {
     margin-top: 11px;
+  }
+  .empty-favorite .empty-favorite_img {
+    margin-top: 62.3px;
+    width: 150px;
+    height: 150px;
+  }
+  .empty-favorite .empty-mis-gifos_img {
+    margin-top: 62.3px;
+    width: 150px;
+    height: 150px;
+  }
+  .empty-favorite .empty-favorite_title {
+    width: 431px;
   }
 }
 
@@ -293,6 +344,14 @@ body {
   line-height: 50px;
   font-weight: bold;
   text-decoration: none;
+}
+
+.ver-mas .botton:hover {
+  background-color: #572EE5;
+}
+
+.ver-mas .botton:hover a {
+  color: #FFFFFF;
 }
 
 @media screen and (min-width: 780px) {
@@ -375,6 +434,7 @@ body {
 
 @media screen and (min-width: 780px) {
   .trending-gifos {
+    width: 90%;
     padding: 67px 94px 185px 94px;
   }
   .trending-gifos .tittle-trending-gifo {
@@ -429,8 +489,6 @@ body {
     width: 357px;
     height: 275px;
     background-image: url(../../imagenes-de-prueba/gatito-gifo.jpg);
-    background-repeat: no-repeat;
-    background-clip: content-box;
     /* &:hover{
           } */
   }

@@ -57,6 +57,7 @@
 }
 @media screen and (min-width: 780px) {
   .trending-gifos {
+    width: 90%;
     padding: 67px 94px 185px 94px;
     .tittle-trending-gifo {
       /*  padding-top: 67px;
@@ -73,6 +74,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 0;
+
       height: 275px;
       .left-arrow {
         display: block;

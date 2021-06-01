@@ -6,9 +6,9 @@
   box-sizing: content-box;
   list-style: none;
 }
-body {
+/* body {
   padding-top: 95px;
-}
+} */
 .header {
   border-top: $primary-color solid 5px;
   background-color: $bg-blanco;
@@ -16,7 +16,7 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  position: fixed;
+  //position: fixed;
   .menu {
     height: 95px;
     display: flex;

@@ -45,6 +45,14 @@
   text-decoration: none;
 }
 
+.ver-mas .botton:hover {
+  background-color: #572EE5;
+}
+
+.ver-mas .botton:hover a {
+  color: #FFFFFF;
+}
+
 @media screen and (min-width: 780px) {
   .ver-mas div {
     margin-left: 10.8%;

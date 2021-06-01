@@ -6,60 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/images/logo-desktop.svg" />
-    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/style-crea-gifos.css">
 
     <title>GIFOS</title>
 </head>
 
 <body>
     <header class="header">
-        <a href="index.html"><img src="./assets/images/logo-mobile.svg" alt="logo" class="logo-mobile"></a>
-        <div>
-            <img src="./assets/images/burger.svg" alt="menu hamburguesa" class="burger">
-            <nav class="menu">
-                <ul>
-                    <li><a href="modo-nocturno.html">Modo Nocturno</a></li>
-                    <li><a href="favoritos.html">Favoritos</a></li>
-                    <li><a href="mis-gifos.html">Mis GIFOS</a></li>
-                    <li><a href="crea-gifo.html"><img src="./assets/images/button-crear-gifo.svg" alt="button-crear-gifo" class="crear-gifo"></a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="menu " id="menu">
+            <a href="./index.html">
+                <div class="logo"></div>
+            </a>
+            <button class="burger" id="burger">
+                <div></div>
+            </button>
+            <!-- <div class="burger" id="burger"></div> -->
+
+            <ul class="menu-ul" id="menu-ul">
+                <li id="nightMode"><a href="./modo-nocturno.html">Modo Nocturno</a></li>
+                <div></div>
+                <li id="favorite"><a href="./favoritos.html">Favoritos</a></li>
+                <div></div>
+                <li id="myGifos"><a href="./mis-gifos.html">Mis GIFOS</a></li>
+                <li id="createGifo">
+                    <a href="./crea-gifo.html"><div class="crear-gifo"></div></a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section class="tittle">
-            <h1>Inspirate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
-        </section>
-        <section class="search">
-            <img src="./assets/images/ilustra_header.svg" alt="ilustra-header">
-            <div class="buscador">
-                <input type="text" name="busca-GIFOS" id="busca-gifos" placeholder="Busca GIFOS y mas">
-                <img src="./assets/images/icon-search.svg" alt="buscador">
+        <section class="crear-gifo">
+            <div class="conteiner">
+                <div class="camera"><img src="./assets/images/camara.svg" alt="camara" class="camera-img"><img src="./assets/images/Path 2.svg" alt="luz-camara" class="luz-camara-img"></div>
+                <div class="cuadrado">
+                    <h1 class="title">Aqui podras crear tus propios <span>GIFOS</span></h1>
+                    <p>¡Crea tu GIFO en solo 3 pasos!</p>
+                    <p>(solo necesitas una camara para grabar un video)</p>
+                </div>
             </div>
-        </section>
-        <section class="trending">
-            <h2>Trending:</h2>
-            <p>Reactions, Entertainment, Sports, Stickers, Artist</p>
-        </section>
-        <section class="trending-gifos">
-            <div>
-                <h2>Trending GIFOS</h2>
-                <p>Mira los ultimos GIFOS de nuestra comunidad.</p>
-            </div>
-            <article class="gifos">
-                <img src="" alt="">
-            </article>
+            <div class=""></div>
+
         </section>
         <footer>
             <div class="footer-redes-sociales">
                 <h4>Compartir en:</h4>
                 <div class="redes-sociales">
-                    <a href="https://www.facebook.com/" target="_blank"><img src="./assets/images/icon_facebook.svg"
-                            alt="icon-facebook"></a>
-                    <a href="https://twitter.com/" target="_blank"><img src="./assets/images/icon-twitter.svg"
-                            alt="icon-twitter"></i></a>
-                    <a href="https://www.instagram.com/" target="_blank"><img src="./assets/images/icon_instagram.svg"
-                            alt="icon-instagram"></i></a>
+                    <div class="facebook"><a href="https://www.facebook.com/" target="_blank"></a></div>
+                    <div class="twitter"><a href="https://twitter.com/" target="_blank"></a></div>
+                    <div class="instagram"><a href="https://www.instagram.com/" target="_blank"></a></div>
                 </div>
             </div>
             <h4>&#169; GIFOS 2020 All rights Reserved.</h4>

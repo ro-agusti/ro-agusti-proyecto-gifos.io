@@ -24,7 +24,7 @@
   margin: auto;
 }
 
-.search div {
+.search .buscador {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,20 +40,19 @@
   margin: auto;
 }
 
-.search div input {
+.search .buscador input {
   width: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   text-align: left;
   color: #6B7989;
   border: none;
-  border-radius: 30em;
   padding-left: 14.7%;
   padding-top: 15px;
   padding-bottom: 13px;
 }
 
-.search div .magnifier {
+.search .buscador .magnifier {
   width: 25px;
   height: 20px;
   border: none;
@@ -92,10 +91,10 @@
   .search img {
     width: 27.7%;
   }
-  .search div {
+  .search .buscador {
     width: 38.3%;
   }
-  .search div input {
+  .search .buscador input {
     color: #9CAFC3;
     padding-left: 54px;
   }

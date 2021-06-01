@@ -13,49 +13,89 @@
 
 <body>
     <header class="header">
-        <a href="index.html"><img src="./assets/images/logo-mobile.svg" alt="logo" class="logo-mobile"></a>
-        <div>
-            <img src="./assets/images/burger.svg" alt="menu hamburguesa" class="burger">
-            <nav class="menu">
-                <ul>
-                    <li><a href="modo-nocturno.html">Modo Nocturno</a></li>
-                    <li><a href="favoritos.html">Favoritos</a></li>
-                    <li><a href="mis-gifos.html">Mis GIFOS</a></li>
-                    <li><a href="crea-gifo.html"><img src="./assets/images/button-crear-gifo.svg" alt="button-crear-gifo" class="crear-gifo"></a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="menu " id="menu">
+            <a href="./index.html">
+                <div class="logo"></div>
+            </a>
+            <button class="burger" id="burger">
+                <div></div>
+            </button>
+            <!-- <div class="burger" id="burger"></div> -->
+
+            <ul class="menu-ul" id="menu-ul">
+                <li id="nightMode"><a href="./modo-nocturno.html">Modo Nocturno</a></li>
+                <div></div>
+                <li id="favorite"><a href="./favoritos.html">Favoritos</a></li>
+                <div></div>
+                <li id="myGifos"><a href="./mis-gifos.html">Mis GIFOS</a></li>
+                <li id="createGifo">
+                    <a href="./crea-gifo.html"><div class="crear-gifo"></div></a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section class="tittle">
             <img src="./assets/images/icon-mis-gifos.svg" alt="mis-gifos" class="icono-gifos">
             <h1 class="favoritos">Mis GIFOS</h1>
         </section>
-        <section class="ver-mas">
-            <img src="" alt="">
+        <section class="empty-favorite">
+            <div class="empty-mis-gifos_img"></div>
+            <h2 class="empty-favorite_title">"¡Animate a crear tu primer GIFO!"</h2>
+        </section> 
+        <!-- <section class="ver-mas">
+            <div>
+                <div class="gifs">
+                    <img src="./imagenes-de-prueba/156x120.svg" alt="156x120">
+                    <img src="./imagenes-de-prueba/156x120.svg" alt="156x120">
+                    <img src="./imagenes-de-prueba/156x120.svg" alt="156x120">
+                    <img src="./imagenes-de-prueba/156x120.svg" alt="156x120">
+                    <img src="./imagenes-de-prueba/156x120.svg" alt="156x120">
+                    <img src="./imagenes-de-prueba/156x120.svg" alt="156x120">
+                    <img src="./imagenes-de-prueba/156x120.svg" alt="156x120">
+                    <img src="./imagenes-de-prueba/156x120.svg" alt="156x120">
+                    <img src="./imagenes-de-prueba/156x120.svg" alt="156x120">
+                    <img src="./imagenes-de-prueba/156x120.svg" alt="156x120">
+                    <img src="./imagenes-de-prueba/156x120.svg" alt="156x120">
+                    <img src="./imagenes-de-prueba/156x120.svg" alt="156x120">
+                </div>
+            </div>
             <div class="botton">
                 <a href="gif-max">VER MAS</a>
             </div>
-        </section>
+        </section> -->
         <section class="trending-gifos">
-            <div>
+            <div class="tittle-trending-gifo">
                 <h2>Trending GIFOS</h2>
                 <p>Mira los ultimos GIFOS de nuestra comunidad.</p>
+
             </div>
-            <article class="gifos">
-                <img src="" alt="">
-            </article>
+            <div class="carroussel">
+                <div class="left-arrow" id="left-arrow"></div>
+                <div class="img-carroussel-conteiner">
+                    <div class="img-carroussel">
+                        <div class="bg-img-carroussel">
+                            <div class="acciones">
+                                <div class="corazon"></div>
+                                <div class="descargar"></div>
+                                <div class="ampliar"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="img-carroussel"></div>
+                    <div class="img-carroussel"></div>
+                </div>
+                <div class="right-arrow" id="right-arrow"></div>
+            </div>
         </section>
         <footer>
             <div class="footer-redes-sociales">
                 <h4>Compartir en:</h4>
                 <div class="redes-sociales">
-                    <a href="https://www.facebook.com/" target="_blank"><img src="./assets/images/icon_facebook.svg"
-                            alt="icon-facebook"></a>
-                    <a href="https://twitter.com/" target="_blank"><img src="./assets/images/icon-twitter.svg"
-                            alt="icon-twitter"></i></a>
-                    <a href="https://www.instagram.com/" target="_blank"><img src="./assets/images/icon_instagram.svg"
-                            alt="icon-instagram"></i></a>
+                    <div class="facebook"><a href="https://www.facebook.com/" target="_blank"></a></div>
+                    <div class="twitter"><a href="https://twitter.com/" target="_blank"></a></div>
+                    <div class="instagram"><a href="https://www.instagram.com/" target="_blank"></a></div>
                 </div>
             </div>
             <h4>&#169; GIFOS 2020 All rights Reserved.</h4>
