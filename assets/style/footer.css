@@ -34,8 +34,11 @@ footer .redes-sociales {
           justify-content: center;
 }
 
-footer .redes-sociales .facebook {
+footer .redes-sociales a {
   margin: 0 9px;
+}
+
+footer .redes-sociales .facebook {
   width: 20px;
   height: 20.2px;
   background-image: url(../images/icon_facebook.svg);
@@ -48,7 +51,6 @@ footer .redes-sociales .facebook:hover {
 }
 
 footer .redes-sociales .twitter {
-  margin: 0 9px;
   width: 18px;
   height: 16.3px;
   background-image: url(../images/icon-twitter.svg);
@@ -60,7 +62,6 @@ footer .redes-sociales .twitter:hover {
 }
 
 footer .redes-sociales .instagram {
-  margin: 0 9px;
   width: 18px;
   height: 18.1px;
   background-image: url(../images/icon_instagram.svg);

@@ -83,6 +83,7 @@
         height: 40px;
         background-image: url(../images/button-slider-left.svg);
         background-repeat: no-repeat;
+        background-size: contain;
         &:hover {
           background-image: url(../images/button-slider-left-hover.svg);
         }
@@ -98,10 +99,21 @@
           margin: 0;
           width: 357px;
           height: 275px;
-          background-image: url(../../imagenes-de-prueba/gatito-gifo.jpg);
+          position: relative;
+         // background-image: url(../../imagenes-de-prueba/gatito-gifo.jpg);
+          //background-repeat: no-repeat;
+        //background-size: contain;
          // background-repeat: no-repeat;
          // background-clip: content-box;
+         img{
+           width: 357px;
+           height: 275px;
+          // opacity: 1;
+         }
           .bg-img-carroussel {
+            position: absolute;
+            //opacity: 0.3;
+            top: 0;
             width: 357px;
             height: 275px;
             background-color: $bg-hover-gifo;
@@ -124,6 +136,10 @@
                 background-repeat: no-repeat;
                 &:hover{
                   background-image: url(../images/icon-fav-hover.svg);
+                background-repeat: no-repeat;
+                }
+                &:visited{
+                  background-image: url(../images/icon-fav-active.svg);
                 background-repeat: no-repeat;
                 }
               }
@@ -168,6 +184,7 @@
         padding: 0;
         background-image: url(../images/Button-Slider-right.svg);
         background-repeat: no-repeat;
+        background-size: contain;
         &:hover {
           background-image: url(../images/Button-Slider-right-hover.svg);
         }

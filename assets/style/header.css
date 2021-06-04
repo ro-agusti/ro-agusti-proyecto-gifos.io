@@ -35,7 +35,8 @@
 .header .menu .logo {
   background-image: url(../images/logo-desktop.svg);
   background-repeat: no-repeat;
-  width: 68px;
+  background-size: contain;
+  width: 70px;
   height: 60px;
   cursor: pointer;
 }
@@ -86,7 +87,7 @@
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: bolder;
   color: #572EE5;
   display: block;
   text-transform: uppercase;
@@ -134,6 +135,8 @@
   }
   .header .menu .logo {
     background-image: url(../images/logo-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 48.8px;
     height: 48.8px;
   }

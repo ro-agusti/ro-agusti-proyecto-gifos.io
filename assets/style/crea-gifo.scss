@@ -1,32 +1,151 @@
 @import "_variables.scss";
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
 }
-.crear-gifo{
-    .conteiner{
-        margin-left: 10.8%;
-        margin-top: 4px;
+.crear-gifo {
+  margin-left: 10.8%;
+  margin-top: 4px;
+  margin-right: 26.1%;
+  display: flex;
+  align-items: center;
+
+  .camera {
+    display: flex;
+    align-items: center;
+    align-self: start;
+    margin-top: 118.6px;
+    .camera-img {
+      width: 123px;
+      height: 192px;
+    }
+    .luz-camara-img {
+      width: 91px;
+      height: 141px;
+    }
+  }
+  .conteiner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .cuadrado {
+      width: 100%;
+      height: 390px;
+      border: 1px solid $primary-color;
+
+      .title {
+        margin: auto;
+        margin-top: 134px;
+        width: 550px;
+        font-family: $primary-font-family;
+        font-weight: bold;
+        font-size: 25px;
+        color: $primary-color;
+        text-align: center;
+        line-height: 35px;
+        span {
+          color: $green-color;
+        }
+      }
+      p {
+        margin: auto;
+        font-family: $secondary-font-family;
+        font-size: 16px;
+        color: $color-black;
+        text-align: center;
+        line-height: 29px;
+      }
+      .divCamara{
+        margin: 40px 100px;
+        background-color: blue;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .operadores-crear-gifo {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+      .pasos {
+        width: 100%;
         display: flex;
         align-items: center;
-        
-        .camera{
-            display: flex;
-        align-items: center;
-        .camera-img{
-            width: 123px;
-            height: 192px;
+        justify-content: center;
+        border-bottom: solid 6.9px $primary-color;
+        .paso {
+          width: 32px;
+          height: 32px;
+          border: solid 1px $primary-color;
+          border-radius: 50%;
+          margin-bottom: 19px;
+          .h5 {
+            color: $primary-color;
+            text-align: center;
+            font-family: $secondary-font-family;
+            line-height: 32px;
+          }
+
+          &:hover {
+            background-color: $primary-color;
+            .h5 {
+              color: $bg-blanco;
+            }
+          }
+          &:nth-child(2) {
+            margin-left: 26px;
+            margin-right: 26px;
+          }
         }
-        .luz-camara-img{
-            width: 91px;
-            height: 141px;
-        }    
-        }
-        .cuadrado{
-            width: 688px;
-            height: 390px;
-            border: 1px solid $primary-color;
-        }
+      }
     }
+    .paso_active{
+      width: 32px;
+          height: 32px;
+          border: solid 1px $primary-color;
+          border-radius: 50%;
+          margin-bottom: 19px;
+          background-color: $primary-color;
+          .h5_active{
+            color: $bg-blanco;
+            text-align: center;
+            font-family: $secondary-font-family;
+            line-height: 32px;
+          }
+          &:nth-child(2) {
+            margin-left: 26px;
+            margin-right: 26px;
+          }
+    }
+    .btn-comenzar {
+      border: 1px solid $primary-color;
+      border-radius: 25px;
+      background: none;
+      width: 127px;
+      height: 50px;
+      margin: auto;
+      margin-top: 20px;
+      font-family: $primary-font-family;
+      font-size: 13px;
+      font-weight: bold;
+      color: $primary-color;
+      letter-spacing: 0;
+      text-align: center;
+      &:hover{
+          background-color: $primary-color;
+          color: $bg-blanco;
+      }
+    }
+  }
+  .operador-img {
+    background-image: url(../images/pelicula.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 152px;
+    height: 88px;
+    align-self: flex-end;
+    margin-bottom: 50px;
+    margin-left: 67px;
+    //margin-right: 167.4px;
+  }
 }

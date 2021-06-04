@@ -27,7 +27,8 @@
     .logo {
       background-image: url(../images/logo-desktop.svg);
       background-repeat: no-repeat;
-      width: 68px;
+      background-size: contain;
+      width: 70px;
       height: 60px;
       cursor: pointer;
     }
@@ -61,12 +62,13 @@
         cursor: pointer;
         a {
           text-decoration: none;
-          font-family: $montserrat-bold;
+          font-family: $primary-font-family;
           font-size: 13px;
-          font-weight: bold;
+          font-weight: bolder;
           color: $primary-color;
           display: block;
           text-transform: uppercase;
+          
           &:hover {
             text-decoration: underline 2px;
             text-decoration-color: $secondary-color;
@@ -99,6 +101,8 @@
       padding-right: 26px;
       .logo {
         background-image: url(../images/logo-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
         width: 48.8px;
         height: 48.8px;
       }
