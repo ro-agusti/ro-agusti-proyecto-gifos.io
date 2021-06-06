@@ -11,11 +11,14 @@
     margin-right: 5.6%;
     .gifs {
       display: grid;
-      grid-template-columns: repeat(2,50%);
+      grid-template-columns: repeat(2, 50%);
       place-content: center;
       gap: 25px;
-      img {
-        width: 140px;
+      .gifoCon {
+        img {
+          width: 156px;
+          height: 120px;
+        }
       }
     }
   }
@@ -38,9 +41,9 @@
       font-weight: bold;
       text-decoration: none;
     }
-    &:hover{
+    &:hover {
       background-color: $primary-color;
-      a{
+      a {
         color: $bg-blanco;
       }
     }
@@ -55,8 +58,75 @@
       .gifs {
         grid-template-columns: repeat(4, 25%);
         gap: 33px;
-        img {
-          width: 260px;
+        .gifoCon {
+          position: relative;
+          img {
+            width: 260px;
+            height: 200px;
+          }
+          .bgGifo {
+            margin: 0;
+            position: absolute;
+            //opacity: 0.3;
+            top: 0;
+            width: 260px;
+            height: 200px;
+            background-color: $bg-hover-gifo;
+            cursor: pointer;
+            padding: 0;
+            //position: relative;
+            // z-index: 10;
+            .acciones {
+              //max-width: 260px;
+              //position: absolute;
+              display: flex;
+            
+              justify-content: flex-end;
+              align-items: center;
+              //margin: 0;
+              margin-right: 10px;
+              margin-top: 10px;
+              .corazon {
+                padding: 0;
+                width: 32px;
+                height: 32px;
+                background-image: url(../images/icon-fav.svg);
+                background-repeat: no-repeat;
+                &:hover {
+                  background-image: url(../images/icon-fav-hover.svg);
+                  background-repeat: no-repeat;
+                }
+                &:visited {
+                  background-image: url(../images/icon-fav-active.svg);
+                  background-repeat: no-repeat;
+                }
+              }
+              .descargar {
+                padding: 0;
+                width: 32px;
+                height: 32px;
+                margin-left: 10px;
+                background-image: url(../images/icon-download.svg);
+                background-repeat: no-repeat;
+                &:hover {
+                  background-image: url(../images/icon-download-hover.svg);
+                  background-repeat: no-repeat;
+                }
+              }
+              .ampliar {
+                padding: 0;
+                width: 32px;
+                height: 32px;
+                margin-left: 10px;
+                background-image: url(../images//icon-max-normal.svg);
+                background-repeat: no-repeat;
+                &:hover {
+                  background-image: url(../images/icon-max-hover.svg);
+                  background-repeat: no-repeat;
+                }
+              }
+            }
+          }
         }
       }
     }

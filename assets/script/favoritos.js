@@ -1,34 +1,58 @@
 //console.log(localStorage.getItem(''));
 let storageFavoritos = localStorage.getItem('favoritos');
-let favoritos; 
-if(storageFavoritos){
-     favoritos = JSON.parse(storageFavoritos);
+let favoritos;
+if (storageFavoritos) {
+    favoritos = JSON.parse(storageFavoritos);
+}else{
+    favoritos=[];
 }
-console.log(favoritos);
-favoritos.forEach(IDgifo => {
-    newGifo(IDgifo);
-});
-async function newGifo(id) {
-    
-    const apiKey = 'SNJ9a5GbDjgSmOddC8ab03rQXLhxjPvS';
-    const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&gif_id=${id}`;
+const gifsConteiner = document.getElementById('gifsConteiner');
+console.log(favoritos); 
 
-    try {
-        const response = await fetch(url);
-        const info = await response.json();
-        const gifsConteiner = document.getElementById('gifsConteiner');
-        for(let i = 0 ; i< cantidad ; i++){
-            let img = document.createElement('img');
-            img.src = info.data[i].images.original.url;
-            conteiner.appendChild(img);
-        }
-       // cant();
-       console.log(info.data[0]);
-        /* const img = document.getElementById('img');
-        img.src =info.data[0].images.original.url  */
-        //console.log(info.data[0].id);
-    } catch (err) {
-        console.log(err);
+
+const getGifoForEach = (array) => {
+    if (array.length > 0) {
+        array.forEach((el) => {
+            console.log(el.gifo);
+            let gifoCont = document.createElement('div');
+            gifoCont.classList = 'gifoCon';
+            gifsConteiner.appendChild(gifoCont);
+            let imgFavoritos = document.createElement('img');
+            imgFavoritos.src = el.gifo;
+            gifoCont.appendChild(imgFavoritos);
+            imgFavoritos.addEventListener('mouseenter', () => {
+                bgGifo = document.createElement('div');
+                bgGifo.classList.add('bgGifo');
+                gifoCont.appendChild(bgGifo);
+                let acciones = document.createElement('div');
+                acciones.classList = 'acciones';
+                bgGifo.appendChild(acciones);
+                let corazon = document.createElement('div');
+                corazon.classList = 'corazon';
+                //corazon.getAttribute('id');
+                //corazon.setAttribute('id', info.data[i].id);//-----------------
+                acciones.appendChild(corazon);
+                //console.log(corazon);
+                let descargar = document.createElement('div');
+                descargar.classList = 'descargar';
+                acciones.appendChild(descargar);
+                let ampliar = document.createElement('div');
+                ampliar.classList = 'ampliar';
+                acciones.appendChild(ampliar);
+                //getMouseEnter(img);
+                /* corazon.addEventListener('click',() =>{
+                    // sacar de favoritos
+                    }) */
+            })
+            gifoCont.addEventListener('mouseleave', () => {
+                bgGifo.classList.remove('bgGifo');
+
+            })
+        });
+    } else {
+            console.log('array vacio')
     }
 
-}
+};
+
+getGifoForEach(favoritos);

@@ -33,7 +33,9 @@
                 <div></div>
                 <li id="myGifos"><a href="./mis-gifos.html">Mis GIFOS</a></li>
                 <li id="createGifo">
-                    <a href="./crea-gifo.html"><div class="crear-gifo"></div></a>
+                    <a href="./crea-gifo.html">
+                        <div class="crear-gifo"></div>
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -45,21 +47,25 @@
         <section class="search">
             <img src="./assets/images/ilustra_header.svg" alt="ilustra-header">
             <div class="buscador">
-                <input type="search" name="busca-GIFOS" id="buscaGifos" placeholder="Busca GIFOS y mas">
+                <input type="text" name="busca-GIFOS" id="buscaGifos" placeholder="Busca GIFOS y mas">
                 <div class="magnifier"></div>
             </div>
         </section>
-        
+
         <section class="trending">
             <h2>Trending:</h2>
             <p>Reactions, Entertainment, Sports, Stickers, Artist</p>
         </section>
         <section class="searching" id="searching">
-            
+
             <!-- <h2 class="type-of-gifo">Gatos</h2>
             <div class="conteiner gifos">
                 <div class=""></div>
             </div> -->
+
+        </section>
+        <section class="sectionVerMas">
+            <button id="btnVerMas" class="btnVerMas hidden">ver mas</button>
         </section>
         <section class="trending-gifos">
             <div class="tittle-trending-gifo">
@@ -69,8 +75,8 @@
             </div>
             <div class="carroussel">
                 <div class="left-arrow" id="left-arrow"></div>
-                <div class="img-carroussel-conteiner">
-                    <div class="img-carroussel">
+                <div class="img-carroussel-conteiner" id="carrousselConteiner">
+                    <!-- <div class="img-carroussel">
                         <img src="./imagenes-de-prueba/gatito-gifo.jpg" alt="">
                         <div class="bg-img-carroussel">
                             <div class="acciones">
@@ -83,24 +89,50 @@
                     </div>
                     </div>
                     <div class="img-carroussel"></div>
-                    <div class="img-carroussel"></div>
+                    <div class="img-carroussel"></div> -->
                 </div>
                 <div class="right-arrow" id="right-arrow"></div>
+            </div>
+        </section>
+        <section class="module">
+            <div class="ampliar_gifo">
+                <div class="close"></div>
+                <div class="img-cont">
+                    <div class="left-arrow"></div>
+                    <img src="./imagenes-de-prueba/gatito-gifo.jpg" alt="images" class="img-gifo">
+                    <div class="right-arrow"></div>
+                </div>
+                <div class="cont-aciones">
+                    <div class="text">
+                        <h6 class="user">User</h6>
+                        <h5 class="titleGifo">Titulo GIFO</h5>
+                    </div>
+                    <div class="corazon-violeta"></div>
+                    <div class="descargar"></div>
+                </div>
             </div>
         </section>
         <footer>
             <div class="footer-redes-sociales">
                 <h4>Compartir en:</h4>
                 <div class="redes-sociales">
-                    <a href="https://www.facebook.com/" target="_blank"><div class="facebook"></div></a>
-                    <a href="https://twitter.com/" target="_blank"><div class="twitter"></div></a>
-                    <a href="https://www.instagram.com/" target="_blank"><div class="instagram"></div></a>
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <div class="facebook"></div>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank">
+                        <div class="twitter"></div>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <div class="instagram"></div>
+                    </a>
                 </div>
             </div>
             <h4>&#169; GIFOS 2020 All rights Reserved.</h4>
         </footer>
     </main>
+    <script src="./assets/script/menu-hamburguesa.js"></script>
     <script src="./assets/script/index.js"></script>
+    <script src="./assets/script/trending-gifos.js"></script>
 </body>
 
 </html>

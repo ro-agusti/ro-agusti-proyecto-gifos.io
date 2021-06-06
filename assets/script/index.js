@@ -1,15 +1,6 @@
-//----menu-----
-const burger = document.getElementById('burger');
-const menu = document.getElementById('menu-ul');
 
-burger.addEventListener('click', () => {
-    menu.classList.toggle('menu-ul_visible');
-    burger.classList.toggle('burger-close');
-    //burger.classList.remove('burger');
-});
-
-/* //--- cambiar a modo nocturno
-const theme = document.getElementById('theme');
+//--- cambiar a modo nocturno
+/* const theme = document.getElementById('theme');
 const btnNightMode = document.getElementById('nightMode');
 btnNightMode.addEventListener('click', () =>{
     if(theme.getAttribute('href')== './assets/style/style.css'){
@@ -17,7 +8,7 @@ btnNightMode.addEventListener('click', () =>{
     }else{
         theme.href = './assets/style/style.css';
     }
-}); */
+});  */
 
 // ---- searching ----
 
@@ -32,17 +23,37 @@ window.addEventListener("keydown", (e) => {
 
     }
 });
-const favoritos = [];
+//const favoritos = [];
+let cantidad = 12;
+
+const btnVerMas = document.getElementById('btnVerMas');
+btnVerMas.addEventListener('click', () => {
+    cantidad += 12;
+    console.log(cantidad);
+    newSearch(search.value);
+    
+})
+if (cantidad >= 30) {
+        btnVerMas.classList.add('hidden');
+    }
 async function newSearch(gifo) {
 
     const apiKey = 'SNJ9a5GbDjgSmOddC8ab03rQXLhxjPvS';
-    let cantidad = '12';
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${gifo}&limit=${cantidad}`;
 
     try {
         const response = await fetch(url);
         const info = await response.json();
         const searching = document.getElementById('searching');
+
+        while (searching.lastChild) {
+            searching.lastChild.remove()
+        }
+
+        btnVerMas.classList.remove('hidden');
+        //btnVerMas.classList.add('btnVerMas');
+
+
         const lineDiv = document.createElement('div');
         lineDiv.classList.add('line-div');
         searching.appendChild(lineDiv);
@@ -64,8 +75,13 @@ async function newSearch(gifo) {
             //img.id = `gifoID${info.data[i].id}`;
             //console.log(img);
             gifoCont.appendChild(img);
-            let bgGifo ;
-            
+            let bgGifo;
+
+            let idGifo = info.data[i].id;
+            let titleGifo = info.data[i].title;
+            let userGifo = info.data[i].username;
+            let urlGifo = img.src;
+
             img.addEventListener('mouseenter', () => {
                 bgGifo = document.createElement('div');
                 bgGifo.classList.add('bgGifo');
@@ -76,64 +92,65 @@ async function newSearch(gifo) {
                 let corazon = document.createElement('div');
                 corazon.classList = 'corazon';
                 corazon.getAttribute('id');
-                corazon.setAttribute('id', info.data[i].id);
+                corazon.setAttribute('id', info.data[i].id);//-----------------
                 acciones.appendChild(corazon);
-                //console.log(corazon);
+                let aDescargar = document.createElement('a');
+                aDescargar.href = '#';
+                acciones.appendChild(aDescargar);
                 let descargar = document.createElement('div');
                 descargar.classList = 'descargar';
-                acciones.appendChild(descargar);
+                aDescargar.appendChild(descargar);
                 let ampliar = document.createElement('div');
                 ampliar.classList = 'ampliar';
                 acciones.appendChild(ampliar);
-                //getMouseEnter(img);
-                corazon.addEventListener('click',() =>{
-                    console.log(corazon.id);
+                corazon.addEventListener('click', () => {
+                   // e.preventDefault();
                     let newFavorito = {
-                        id: corazon.id
+                        id: idGifo,
+                        username: userGifo,
+                        title: titleGifo,
+                        gifo: urlGifo
                     }
-                    //const favorito = favoritos.find(x => x.id === newProduct.id);
-                    favoritos.push(newFavorito);
-                    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+                    getFavoritosLS(newFavorito);
+                })
+                descargar.addEventListener('click', () => {
+                    console.log(aDescargar);
+                    /* fetch(img)
+                        .then(res=>res.blob())
+                        .then(img=>{
+                            aDescargar.href=URL.createObjectURL(img);
+                        }) */
                 })
             })
-            gifoCont.addEventListener('mouseleave', ()=>{
-               bgGifo.classList.remove('bgGifo');
-               
+            gifoCont.addEventListener('mouseleave', () => {
+                bgGifo.classList.remove('bgGifo');
             })
-            
-
         }
-        const btnVerMas = document.createElement('button');
-        btnVerMas.classList.add('btnVerMas');
-        btnVerMas.textContent = 'VER MAS';
-        searching.appendChild(btnVerMas);
-        btnVerMas.addEventListener('click', () => {
-            //verMas(img,conteiner)
-            for (let i = 24; i < Number(cantidad * 2); i++) {
-                let img = document.createElement('img');
-                img.src = info.data[i].images.original.url;
-                img.id = `gifoID${info.data[i].id}`;
-                //console.log(img);
-                conteiner.appendChild(img);
-                getMouseEnter(img)
-            }
-        })
     } catch (err) {
         console.log(err);
     }
-}
-/* function verMas(el, cont) {
-    el = document.createElement('img');
-    el.src = info.data[i].images.original.url;
-    el.id = `gifoID${info.data[i].id}`;
-    //console.log(img);
-    cont.appendChild(el);
-} */
-function getMouseEnter(el,) {
-    el.addEventListener('mouseenter', () => {
-        //console.log('hola');
 
-
-    })
 }
 
+
+//-----funcion cargar local storage ------
+const getFavoritosLS = (objeto) => {
+    let localStorage = localStorage.getItem('favoritos');
+    if (localStorage) {
+        let parsearLS = JSON.parse(localStorage);
+        let filtrarLS = parsearLS.filter(el => objeto.id == el.id);
+        console.log(filtrarLS);
+        if (filtrarLS.length > 0) {
+            console.log('ya lo tenias en favoritos');
+        } else {
+            console.log('agregado a favoritos');
+            parsearLS.push(objeto);
+            let arrayLS = JSON.stringify(parsearLS);
+            localStorage.setItem('favoritos', arrayLS);
+        }
+    } else {
+        console.log('agregado a favoritos');
+        let lsProvisorio = JSON.stringify(objeto);
+        localStorage.setItem('favoritos', lsProvisorio);
+    }
+};

@@ -61,6 +61,36 @@
     }
   }
 }
+/* .sectionVerMas{
+  display: flex;
+  .btnVerMas{
+    .botton {
+      margin: auto;
+      width: 127px;
+      height: 50px;
+      text-align: center;
+      border: solid $primary-color 1px;
+      border-radius: 50px;
+      margin-top: 78px;
+      margin-bottom: 78px;
+      a {
+        font-family: $primary-font-family;
+        font-size: 13px;
+        color: $primary-color;
+        letter-spacing: 0;
+        line-height: 50px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      &:hover {
+        background-color: $primary-color;
+        a {
+          color: $bg-blanco;
+        }
+      }
+    }
+  }
+} */
 @media screen and (min-width: 780px) {
   .searching {
     .line-div {
@@ -144,3 +174,6 @@
     }
   }
 }
+
+.hidden { 
+  display: none;}

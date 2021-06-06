@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: content-box;
 }
+.hidden{
+  display: none;
+}
 .crear-gifo {
   margin-left: 10.8%;
   margin-top: 4px;
@@ -33,11 +36,14 @@
       width: 100%;
       height: 390px;
       border: 1px solid $primary-color;
-
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
       .title {
-        margin: auto;
+        //margin: auto;
         margin-top: 134px;
-        width: 550px;
+        width: 100%;
         font-family: $primary-font-family;
         font-weight: bold;
         font-size: 25px;
@@ -49,18 +55,21 @@
         }
       }
       p {
-        margin: auto;
+        //margin: auto;
+        margin-top: 3px;
         font-family: $secondary-font-family;
         font-size: 16px;
         color: $color-black;
         text-align: center;
         line-height: 29px;
       }
-      .divCamara{
-        margin: 40px 100px;
+      .divCamara {
+        margin: auto;
         background-color: blue;
-        width: 100%;
-        height: 100%;
+        width: 488px;
+        height: 310px;
+        //align-self: center;
+        //justify-self: center;
       }
     }
     .operadores-crear-gifo {
@@ -79,6 +88,7 @@
           border: solid 1px $primary-color;
           border-radius: 50%;
           margin-bottom: 19px;
+          cursor: pointer;
           .h5 {
             color: $primary-color;
             text-align: center;
@@ -99,23 +109,25 @@
         }
       }
     }
-    .paso_active{
+    
+    .paso_active {
       width: 32px;
-          height: 32px;
-          border: solid 1px $primary-color;
-          border-radius: 50%;
-          margin-bottom: 19px;
-          background-color: $primary-color;
-          .h5_active{
-            color: $bg-blanco;
-            text-align: center;
-            font-family: $secondary-font-family;
-            line-height: 32px;
-          }
-          &:nth-child(2) {
-            margin-left: 26px;
-            margin-right: 26px;
-          }
+      height: 32px;
+      border: solid 1px $primary-color;
+      border-radius: 50%;
+      margin-bottom: 19px;
+      background-color: $primary-color;
+      cursor: pointer;
+      .h5_active {
+        color: $bg-blanco;
+        text-align: center;
+        font-family: $secondary-font-family;
+        line-height: 32px;
+      }
+      &:nth-child(2) {
+        margin-left: 26px;
+        margin-right: 26px;
+      }
     }
     .btn-comenzar {
       border: 1px solid $primary-color;
@@ -131,9 +143,9 @@
       color: $primary-color;
       letter-spacing: 0;
       text-align: center;
-      &:hover{
-          background-color: $primary-color;
-          color: $bg-blanco;
+      &:hover {
+        background-color: $primary-color;
+        color: $bg-blanco;
       }
     }
   }

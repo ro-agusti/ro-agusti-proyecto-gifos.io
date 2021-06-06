@@ -1,0 +1,105 @@
+@import "_variables.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+.ampliar_gifo {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: $bg-blanco-translucido;
+  padding-top: 64px;
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+  align-items: center;
+  .close {
+    width: 14px;
+    height: 14px;
+    background-image: url(../images/close.svg);
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: 39.3px;
+  }
+  .img-cont {
+    .left-arrow {
+      display: none;
+    }
+    .img-gifo {
+      margin-top: 78px;
+      width: 318px;
+      height: 245px;
+    }
+    .right-arrow {
+      display: none;
+    }
+  }
+
+  .cont-aciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    width: 318px;
+    .text {
+      width: 231.5px;
+      .user {
+        font-family: $secondary-font-family;
+        font-size: 15px;
+        color: $color-negro;
+
+        //text-align: center;
+      }
+      .titleGifo {
+        font-family: $primary-font-family;
+        font-weight: bold;
+        font-size: 16px;
+        color: $color-negro;
+        //text-align: center;
+      }
+    }
+    .corazon-violeta {
+      width: 20px;
+      height: 18px;
+      background-image: url(../images/icon-fav-active.svg);
+      background-repeat: no-repeat;
+    }
+    .descargar {
+      width: 19.2px;
+      height: 21.1px;
+      background-image: url(../images/icon-download.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      &:hover {
+        background-image: url(../images/icon-download-hover.svg);
+      }
+    }
+  }
+}
+@media screen and (min-width: 780px) {
+    .ampliar_gifo{
+        padding-top: 66.4px;
+        .close{
+            width: 15.2px;
+            height: 15.2px;
+            margin-right: 19.3%;
+        }
+        .img-cont{
+            display: flex;
+            align-items: center;
+            .left-arrow{
+                display: block;
+                width: 40px;
+                height: 40px;
+                background-image: url(../images/button-slider-left.svg);
+                background-repeat: no-repeat;
+            }
+            .img-gifo{
+                width: 695px;
+                height: 385px;
+            }
+        }
+    }
+}

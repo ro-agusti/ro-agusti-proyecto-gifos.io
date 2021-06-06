@@ -324,8 +324,9 @@
   gap: 25px;
 }
 
-.ver-mas div .gifs img {
-  width: 140px;
+.ver-mas div .gifs .gifoCon img {
+  width: 156px;
+  height: 120px;
 }
 
 .ver-mas .botton {
@@ -367,8 +368,74 @@
         grid-template-columns: repeat(4, 25%);
     gap: 33px;
   }
-  .ver-mas div .gifs img {
+  .ver-mas div .gifs .gifoCon {
+    position: relative;
+  }
+  .ver-mas div .gifs .gifoCon img {
     width: 260px;
+    height: 200px;
+  }
+  .ver-mas div .gifs .gifoCon .bgGifo {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 260px;
+    height: 200px;
+    background-color: rgba(87, 46, 229, 0.6);
+    cursor: pointer;
+    padding: 0;
+  }
+  .ver-mas div .gifs .gifoCon .bgGifo .acciones {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .ver-mas div .gifs .gifoCon .bgGifo .acciones .corazon {
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/icon-fav.svg);
+    background-repeat: no-repeat;
+  }
+  .ver-mas div .gifs .gifoCon .bgGifo .acciones .corazon:hover {
+    background-image: url(../images/icon-fav-hover.svg);
+    background-repeat: no-repeat;
+  }
+  .ver-mas div .gifs .gifoCon .bgGifo .acciones .corazon:visited {
+    background-image: url(../images/icon-fav-active.svg);
+    background-repeat: no-repeat;
+  }
+  .ver-mas div .gifs .gifoCon .bgGifo .acciones .descargar {
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+    background-image: url(../images/icon-download.svg);
+    background-repeat: no-repeat;
+  }
+  .ver-mas div .gifs .gifoCon .bgGifo .acciones .descargar:hover {
+    background-image: url(../images/icon-download-hover.svg);
+    background-repeat: no-repeat;
+  }
+  .ver-mas div .gifs .gifoCon .bgGifo .acciones .ampliar {
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+    background-image: url(../images//icon-max-normal.svg);
+    background-repeat: no-repeat;
+  }
+  .ver-mas div .gifs .gifoCon .bgGifo .acciones .ampliar:hover {
+    background-image: url(../images/icon-max-hover.svg);
+    background-repeat: no-repeat;
   }
 }
 
