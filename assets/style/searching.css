@@ -5,6 +5,10 @@
           box-sizing: content-box;
 }
 
+.hidden {
+  display: none;
+}
+
 .searching {
   margin-top: 55px;
   display: -webkit-box;
@@ -51,8 +55,16 @@
   height: 120px;
 }
 
-.searching .btnVerMas {
-  margin: auto;
+.sectionVerMas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sectionVerMas .btnVerMas {
   margin-top: 78px;
   margin-bottom: 79px;
   width: 127px;
@@ -68,41 +80,54 @@
   background-color: #FFFFFF;
 }
 
-.searching .btnVerMas:hover {
+.sectionVerMas .btnVerMas:hover {
   background-color: #572EE5;
   color: #FFFFFF;
 }
 
-/* .sectionVerMas{
+.sin-resultados {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  .btnVerMas{
-    .botton {
-      margin: auto;
-      width: 127px;
-      height: 50px;
-      text-align: center;
-      border: solid $primary-color 1px;
-      border-radius: 50px;
-      margin-top: 78px;
-      margin-bottom: 78px;
-      a {
-        font-family: $primary-font-family;
-        font-size: 13px;
-        color: $primary-color;
-        letter-spacing: 0;
-        line-height: 50px;
-        font-weight: bold;
-        text-decoration: none;
-      }
-      &:hover {
-        background-color: $primary-color;
-        a {
-          color: $bg-blanco;
-        }
-      }
-    }
-  }
-} */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sin-resultados h2 {
+  margin-top: 83.9px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sin-resultados .ouch {
+  margin-top: 109px;
+  width: 150px;
+  height: 150px;
+  background-image: url(../images/icon-busqueda-sin-resultado.svg);
+  background-repeat: no-repeat;
+}
+
+.sin-resultados h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  color: #50E3C2;
+  text-align: center;
+  line-height: 25px;
+  font-weight: bold;
+  margin-top: 29px;
+  margin-bottom: 149px;
+}
+
 @media screen and (min-width: 780px) {
   .searching .line-div {
     width: 338px;
@@ -184,9 +209,5 @@
     background-image: url(../images/icon-max-hover.svg);
     background-repeat: no-repeat;
   }
-}
-
-.hidden {
-  display: none;
 }
 /*# sourceMappingURL=searching.css.map */

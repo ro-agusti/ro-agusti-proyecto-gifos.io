@@ -13,6 +13,7 @@ btnNightMode.addEventListener('click', () =>{
 // ---- searching ----
 
 const search = document.getElementById('buscaGifos');
+const trending = document.getElementById('trending');
 window.addEventListener("keydown", (e) => {
     if (e.key == "Enter") {
 
@@ -20,22 +21,22 @@ window.addEventListener("keydown", (e) => {
         // console.log(search.value);
         let busqueda = search.value;
         newSearch(busqueda);
-
+ //trending.classList.add('hidden');
     }
 });
 //const favoritos = [];
 let cantidad = 12;
-
 const btnVerMas = document.getElementById('btnVerMas');
 btnVerMas.addEventListener('click', () => {
     cantidad += 12;
     console.log(cantidad);
     newSearch(search.value);
-    
+   
+
 })
 if (cantidad >= 30) {
-        btnVerMas.classList.add('hidden');
-    }
+    btnVerMas.classList.add('hidden');
+}
 async function newSearch(gifo) {
 
     const apiKey = 'SNJ9a5GbDjgSmOddC8ab03rQXLhxjPvS';
@@ -45,7 +46,7 @@ async function newSearch(gifo) {
         const response = await fetch(url);
         const info = await response.json();
         const searching = document.getElementById('searching');
-
+        trending.classList.add('hidden');
         while (searching.lastChild) {
             searching.lastChild.remove()
         }
@@ -103,15 +104,16 @@ async function newSearch(gifo) {
                 let ampliar = document.createElement('div');
                 ampliar.classList = 'ampliar';
                 acciones.appendChild(ampliar);
+                let objetoGifo = {
+                    id: idGifo,
+                    username: userGifo,
+                    title: titleGifo,
+                    gifo: urlGifo
+                }
                 corazon.addEventListener('click', () => {
-                   // e.preventDefault();
-                    let newFavorito = {
-                        id: idGifo,
-                        username: userGifo,
-                        title: titleGifo,
-                        gifo: urlGifo
-                    }
-                    getFavoritosLS(newFavorito);
+                    // e.preventDefault();
+                    
+                    getFavoritosLS(objetoGifo);
                 })
                 descargar.addEventListener('click', () => {
                     console.log(aDescargar);
@@ -121,6 +123,9 @@ async function newSearch(gifo) {
                             aDescargar.href=URL.createObjectURL(img);
                         }) */
                 })
+                ampliar.addEventListener('click', () => {
+                    ampliarGifo(objetoGifo);
+                })
             })
             gifoCont.addEventListener('mouseleave', () => {
                 bgGifo.classList.remove('bgGifo');
@@ -128,6 +133,9 @@ async function newSearch(gifo) {
         }
     } catch (err) {
         console.log(err);
+        const sinResultados = document.getElementById('sinResultados');
+        sinResultados.classList.remove('hidden');
+        btnVerMas.classList.add('hidden');
     }
 
 }
@@ -154,3 +162,54 @@ const getFavoritosLS = (objeto) => {
         localStorage.setItem('favoritos', lsProvisorio);
     }
 };
+
+
+
+//----- ampliar gifo -----
+const ampliarGifoSection = document.getElementById('ampliarGifoSection');
+function ampliarGifo(el) {
+    let divContGn = document.createElement('div');
+    divContGn.classList.add('ampliar_gifo');
+    ampliarGifoSection.appendChild(divContGn);
+    let divClosed = document.createElement('div');
+    divClosed.classList.add('close');
+    divContGn.appendChild(divClosed);
+    let divImgCont = document.createElement('div');
+    divImgCont.classList.add('img-cont');
+    divContGn.appendChild(divImgCont);
+    let divLeftArrow = document.createElement('div');
+    divLeftArrow.classList.add('left-arrow');
+    divImgCont.appendChild(divLeftArrow);
+    let imgGifo = document.createElement('img');
+    imgGifo.classList.add('img-gifo');
+    imgGifo.src = el.gifo;
+    divImgCont.appendChild(imgGifo);
+    let divRightArrow = document.createElement('div');
+    divRightArrow.classList.add('right-arrow');
+    divImgCont.appendChild(divRightArrow);
+    let divContAcciones = document.createElement('div');
+    divContAcciones.classList.add('cont-aciones');
+    divContGn.appendChild(divContAcciones);
+    let text = document.createElement('div');
+    text.classList.add('text');
+    divContAcciones.appendChild(text);
+    let user = document.createElement('h6');
+    user.classList.add('user');
+    user.textContent = el.username;
+    text.appendChild(user);
+    let titleGifo = document.createElement('h5');
+    titleGifo.classList.add('titleGifo');
+    titleGifo.textContent = el.title;
+    text.appendChild(titleGifo);
+    let corazon = document.createElement('div');
+    corazon.classList.add('corazon-violeta');
+    divContAcciones.appendChild(corazon);
+    let descargar = document.createElement('div');
+    descargar.classList.add('descargar');
+    divContAcciones.appendChild(descargar);
+    divClosed.addEventListener('click',()=>{
+        ampliarGifoSection.classList.add('hidden');
+    })
+}
+export default ampliarGifo;
+

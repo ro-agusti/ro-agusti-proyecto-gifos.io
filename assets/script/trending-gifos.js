@@ -1,4 +1,7 @@
 //---- trending gifos----
+
+import ampliarGifo from './index.js';
+
 const leftArrow = document.getElementById('left-arrow');
 const rightArrow = document.getElementById('right-arrow');
 const carrousselConteiner = document.getElementById('carrousselConteiner');
@@ -25,7 +28,12 @@ async function seeTrendingGifos(cantGifo){
             let img = document.createElement('img');
             img.src = info.data[i].images.original.url;
             gifoCont.appendChild(img);
-
+            let bgGifo;
+            
+            let idGifo = info.data[i].id;
+            let titleGifo = info.data[i].title;
+            let userGifo = info.data[i].username;
+            let urlGifo = img.src;
             img.addEventListener('mouseenter',()=>{
                 bgGifo = document.createElement('div');
                 bgGifo.classList.add('bg-img-carroussel');
@@ -47,6 +55,16 @@ async function seeTrendingGifos(cantGifo){
                 let ampliar = document.createElement('div');
                 ampliar.classList = 'ampliar';
                 acciones.appendChild(ampliar);
+
+                let objetoGifo = {
+                    id: idGifo,
+                    username: userGifo,
+                    title: titleGifo,
+                    gifo: urlGifo
+                }
+                ampliar.addEventListener('click', ()=>{
+                    ampliarGifo(objetoGifo);
+                })
             });
             gifoCont.addEventListener('mouseleave', () => {
                 bgGifo.classList.remove('bg-img-carroussel');

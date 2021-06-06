@@ -15,6 +15,7 @@
   width: 100%;
   top: 0;
   left: 0;
+  position: fixed;
 }
 
 .header .menu {
@@ -120,6 +121,10 @@
 
 .header .menu .menu-ul li .crear-gifo:active {
   background-image: url(../images/CTA-crear-gifo-active.svg);
+}
+
+main {
+  margin-top: 95px;
 }
 
 @media screen and (max-width: 768px) {
