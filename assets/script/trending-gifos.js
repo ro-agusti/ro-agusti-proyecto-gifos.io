@@ -1,6 +1,6 @@
 //---- trending gifos----
 
-import ampliarGifo from './index.js';
+import {ampliarGifo,getFavoritos}  from './index.js';
 
 const leftArrow = document.getElementById('left-arrow');
 const rightArrow = document.getElementById('right-arrow');
@@ -16,7 +16,7 @@ rightArrow.addEventListener('click',()=>{
 async function seeTrendingGifos(cantGifo){
     const apiKey = 'SNJ9a5GbDjgSmOddC8ab03rQXLhxjPvS';
     const url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=${cantGifo}`;
-    console.log(url);
+    //console.log(url);
     try{
         const response=await fetch(url);
         const info = await response.json();
@@ -62,6 +62,9 @@ async function seeTrendingGifos(cantGifo){
                     title: titleGifo,
                     gifo: urlGifo
                 }
+                corazon.addEventListener('click', ()=>{
+                    getFavoritos(objetoGifo);
+                })
                 ampliar.addEventListener('click', ()=>{
                     ampliarGifo(objetoGifo);
                 })

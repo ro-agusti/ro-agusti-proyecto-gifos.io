@@ -71,6 +71,7 @@
       background-image: url(../images/icon-fav-active.svg);
       background-repeat: no-repeat;
       background-position: center;
+      cursor: pointer;
     }
     .descargar {
       width: 19.2px;
@@ -81,6 +82,7 @@
       opacity: 0.5;
       border: 1px solid $color-light-grey;
       border-radius: 6px;
+      cursor: pointer;
       &:hover {
         background-image: url(../images/icon-download-hover.svg);
       }

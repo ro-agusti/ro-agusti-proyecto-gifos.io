@@ -214,13 +214,9 @@ main {
   display: none;
 }
 
-main {
-  margin-top: 95px;
-}
-
 .crear-gifo {
   margin-left: 10.8%;
-  margin-top: 4px;
+  margin-top: 99px;
   margin-right: 26.1%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -266,7 +262,9 @@ main {
 .crear-gifo .conteiner .cuadrado {
   width: 100%;
   height: 390px;
-  border: 1px solid #572EE5;
+  background-image: url(../images/cont-crear-gifo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

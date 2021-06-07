@@ -677,6 +677,7 @@ main {
     background-image: url(../images/button-slider-left.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    cursor: pointer;
   }
   .trending-gifos .carroussel .left-arrow:hover {
     background-image: url(../images/button-slider-left-hover.svg);
@@ -733,6 +734,7 @@ main {
     height: 32px;
     background-image: url(../images/icon-fav.svg);
     background-repeat: no-repeat;
+    cursor: pointer;
   }
   .trending-gifos .carroussel .img-carroussel-conteiner .img-carroussel .bg-img-carroussel .acciones .corazon:hover {
     background-image: url(../images/icon-fav-hover.svg);
@@ -749,6 +751,7 @@ main {
     margin-left: 10px;
     background-image: url(../images/icon-download.svg);
     background-repeat: no-repeat;
+    cursor: pointer;
   }
   .trending-gifos .carroussel .img-carroussel-conteiner .img-carroussel .bg-img-carroussel .acciones .descargar:hover {
     background-image: url(../images/icon-download-hover.svg);
@@ -761,6 +764,7 @@ main {
     margin-left: 10px;
     background-image: url(../images//icon-max-normal.svg);
     background-repeat: no-repeat;
+    cursor: pointer;
   }
   .trending-gifos .carroussel .img-carroussel-conteiner .img-carroussel .bg-img-carroussel .acciones .ampliar:hover {
     background-image: url(../images/icon-max-hover.svg);
@@ -778,6 +782,7 @@ main {
     background-image: url(../images/Button-Slider-right.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    cursor: pointer;
   }
   .trending-gifos .carroussel .right-arrow:hover {
     background-image: url(../images/Button-Slider-right-hover.svg);
@@ -878,6 +883,7 @@ main {
   background-image: url(../images/icon-fav-active.svg);
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 .ampliar_gifo .cont-aciones .descargar {
@@ -889,6 +895,7 @@ main {
   opacity: 0.5;
   border: 1px solid #9CAFC3;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .ampliar_gifo .cont-aciones .descargar:hover {

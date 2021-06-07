@@ -24,7 +24,7 @@ window.addEventListener("keydown", (e) => {
  //trending.classList.add('hidden');
     }
 });
-//const favoritos = [];
+const favoritos = [];
 let cantidad = 12;
 const btnVerMas = document.getElementById('btnVerMas');
 btnVerMas.addEventListener('click', () => {
@@ -111,9 +111,7 @@ async function newSearch(gifo) {
                     gifo: urlGifo
                 }
                 corazon.addEventListener('click', () => {
-                    // e.preventDefault();
-                    
-                    getFavoritosLS(objetoGifo);
+                    getFavoritos(objetoGifo);
                 })
                 descargar.addEventListener('click', () => {
                     console.log(aDescargar);
@@ -140,30 +138,18 @@ async function newSearch(gifo) {
 
 }
 
-
 //-----funcion cargar local storage ------
-const getFavoritosLS = (objeto) => {
-    let localStorage = localStorage.getItem('favoritos');
-    if (localStorage) {
-        let parsearLS = JSON.parse(localStorage);
-        let filtrarLS = parsearLS.filter(el => objeto.id == el.id);
-        console.log(filtrarLS);
-        if (filtrarLS.length > 0) {
-            console.log('ya lo tenias en favoritos');
-        } else {
-            console.log('agregado a favoritos');
-            parsearLS.push(objeto);
-            let arrayLS = JSON.stringify(parsearLS);
-            localStorage.setItem('favoritos', arrayLS);
-        }
-    } else {
-        console.log('agregado a favoritos');
-        let lsProvisorio = JSON.stringify(objeto);
-        localStorage.setItem('favoritos', lsProvisorio);
+function getFavoritos(newGifo){
+    let itemFavorito = favoritos.find(el => el.id == newGifo.id);
+    if(itemFavorito){
+        console.log('ya es un favorito');
+    }else{
+        favoritos.push(newGifo);
+        console.log('se agrego al carrito');
+        console.log(favoritos);
+        localStorage.setItem('favoritos',JSON.stringify(favoritos));
     }
-};
-
-
+}
 
 //----- ampliar gifo -----
 const ampliarGifoSection = document.getElementById('ampliarGifoSection');
@@ -210,6 +196,9 @@ function ampliarGifo(el) {
     divClosed.addEventListener('click',()=>{
         ampliarGifoSection.classList.add('hidden');
     })
+    corazon.addEventListener('click',()=>{
+        getFavoritos(el);
+    })
 }
-export default ampliarGifo;
+export {ampliarGifo,getFavoritos} ;
 

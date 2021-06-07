@@ -84,6 +84,7 @@
         background-image: url(../images/button-slider-left.svg);
         background-repeat: no-repeat;
         background-size: contain;
+        cursor: pointer;
         &:hover {
           background-image: url(../images/button-slider-left-hover.svg);
         }
@@ -134,6 +135,7 @@
                 height: 32px;
                 background-image: url(../images/icon-fav.svg);
                 background-repeat: no-repeat;
+                cursor: pointer;
                 &:hover{
                   background-image: url(../images/icon-fav-hover.svg);
                 background-repeat: no-repeat;
@@ -150,6 +152,7 @@
                 margin-left: 10px;
                 background-image: url(../images/icon-download.svg);
                 background-repeat: no-repeat;
+                cursor: pointer;
                 &:hover{
                   background-image: url(../images/icon-download-hover.svg);
                   background-repeat: no-repeat;
@@ -162,6 +165,7 @@
                 margin-left: 10px;
                 background-image: url(../images//icon-max-normal.svg);
                 background-repeat: no-repeat;
+                cursor: pointer;
                 &:hover{
                   background-image: url(../images/icon-max-hover.svg);
                 background-repeat: no-repeat;
@@ -185,6 +189,7 @@
         background-image: url(../images/Button-Slider-right.svg);
         background-repeat: no-repeat;
         background-size: contain;
+        cursor: pointer;
         &:hover {
           background-image: url(../images/Button-Slider-right-hover.svg);
         }
