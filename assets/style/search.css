@@ -126,6 +126,7 @@
 
 .search .buscador-con-sugerencias .cont-search input:focus-visible {
   outline: none;
+  background: none;
 }
 
 .search .buscador-con-sugerencias .cont-search .close {
@@ -222,10 +223,21 @@
     border: none;
     border-radius: 30em;
     padding-top: 15px;
+    background: none;
     padding-bottom: 13px;
   }
   .search .buscador-con-sugerencias .cont-search input:focus-visible {
     outline: none;
+    background: none;
+  }
+  .search .buscador-con-sugerencias .cont-search .close {
+    display: block;
+    width: 25px;
+    height: 20px;
+    border: none;
+    background-image: url(../images/close.svg);
+    background-repeat: no-repeat;
+    margin-top: 15px;
   }
   .search .buscador-con-sugerencias .line {
     display: block;
@@ -242,10 +254,6 @@
     display: -ms-flexbox;
     display: flex;
     margin-bottom: 10px;
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    color: #9CAFC3;
-    text-align: left;
   }
   .search .buscador-con-sugerencias .sugerencias li .magnifier {
     width: 19px;
@@ -255,6 +263,12 @@
     background-repeat: no-repeat;
     background-size: contain;
     margin-right: 13px;
+  }
+  .search .buscador-con-sugerencias .sugerencias li h6 {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #9CAFC3;
+    text-align: left;
   }
   .trending h2 {
     font-size: 18px;

@@ -41,10 +41,10 @@
             <img src="./assets/images/icon-favoritos.svg" alt="corazon-favoritos" class="icono-gifos">
             <h1 class="favoritos">Favoritos</h1>
         </section>
-        <!-- <section class="empty-favorite">
+        <section class="hidden empty-favorite" id="emptyFavorite">
             <div class="empty-favorite_img"></div>
             <h2 class="empty-favorite_title">"¡Guarda tu primer GIFO en Favoritos para que se muestre aqui!"</h2>
-        </section>  -->
+        </section>  
         <section class="ver-mas">
             <div>
                 <div class="gifs" id="gifsConteiner">
@@ -62,7 +62,7 @@
                     <img src="./imagenes-de-prueba/156x120.svg" alt="156x120"> -->
                 </div>
             </div>
-            <div class="botton">
+            <div class="botton" id="btn-verMas-favoritos">
                 <a href="gif-max">VER MAS</a>
             </div>
         </section>
@@ -74,19 +74,21 @@
             </div>
             <div class="carroussel">
                 <div class="left-arrow" id="left-arrow"></div>
-                <div class="img-carroussel-conteiner">
-                    <div class="img-carroussel">
+                <div class="img-carroussel-conteiner" id="carrousselConteiner">
+                    <!-- <div class="img-carroussel">
+                        <img src="./imagenes-de-prueba/gatito-gifo.jpg" alt="">
                         <div class="bg-img-carroussel">
                             <div class="acciones">
                                 <div class="corazon"></div>
                                 <div class="descargar"></div>
                                 <div class="ampliar"></div>
                             </div>
-
+                            div
                         </div>
                     </div>
+                    </div>
                     <div class="img-carroussel"></div>
-                    <div class="img-carroussel"></div>
+                    <div class="img-carroussel"></div> -->
                 </div>
                 <div class="right-arrow" id="right-arrow"></div>
             </div>
@@ -105,7 +107,9 @@
             <h4>&#169; GIFOS 2020 All rights Reserved.</h4>
         </footer>
     </main>
+    <script src="./assets/script/menu-hamburguesa.js"></script>
     <script src="./assets/script/favoritos.js" type="module"></script>
+    <script src="./assets/script/trending-gifos.js" type="module"></script>
 </body>
 
 </html>

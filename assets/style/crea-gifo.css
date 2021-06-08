@@ -9,9 +9,13 @@
   display: none;
 }
 
+main {
+  margin-top: 95px;
+}
+
 .crear-gifo {
   margin-left: 10.8%;
-  margin-top: 99px;
+  margin-top: 100px;
   margin-right: 26.1%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,7 +34,7 @@
           align-items: center;
   -ms-flex-item-align: start;
       align-self: start;
-  margin-top: 118.6px;
+  margin-top: 90.6px;
 }
 
 .crear-gifo .camera .camera-img {
@@ -56,12 +60,11 @@
 
 .crear-gifo .conteiner .cuadrado {
   width: 100%;
-  height: 390px;
-  background-image: url(../images/cont-crear-gifo.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
+  height: 340px;
+  border: 1px solid #572EE5;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: flex;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -76,7 +79,7 @@
 }
 
 .crear-gifo .conteiner .cuadrado .title {
-  margin-top: 134px;
+  margin-top: 84px;
   width: 100%;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
@@ -90,7 +93,7 @@
   color: #50E3C2;
 }
 
-.crear-gifo .conteiner .cuadrado p {
+.crear-gifo .conteiner .cuadrado .paragraph {
   margin-top: 3px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -99,9 +102,9 @@
   line-height: 29px;
 }
 
-.crear-gifo .conteiner .cuadrado .divCamara {
+.crear-gifo .conteiner .cuadrado .video {
   margin: auto;
-  background-color: blue;
+  border: blue solid 1px;
   width: 488px;
   height: 310px;
 }
@@ -114,6 +117,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 24px;
+  width: 100%;
 }
 
 .crear-gifo .conteiner .operadores-crear-gifo .pasos {
@@ -136,7 +140,6 @@
   border: solid 1px #572EE5;
   border-radius: 50%;
   margin-bottom: 19px;
-  cursor: pointer;
 }
 
 .crear-gifo .conteiner .operadores-crear-gifo .pasos .paso .h5 {
@@ -144,14 +147,6 @@
   text-align: center;
   font-family: "Roboto", sans-serif;
   line-height: 32px;
-}
-
-.crear-gifo .conteiner .operadores-crear-gifo .pasos .paso:hover {
-  background-color: #572EE5;
-}
-
-.crear-gifo .conteiner .operadores-crear-gifo .pasos .paso:hover .h5 {
-  color: #FFFFFF;
 }
 
 .crear-gifo .conteiner .operadores-crear-gifo .pasos .paso:nth-child(2) {
@@ -166,7 +161,6 @@
   border-radius: 50%;
   margin-bottom: 19px;
   background-color: #572EE5;
-  cursor: pointer;
 }
 
 .crear-gifo .conteiner .paso_active .h5_active {
@@ -195,6 +189,7 @@
   color: #572EE5;
   letter-spacing: 0;
   text-align: center;
+  cursor: pointer;
 }
 
 .crear-gifo .conteiner .btn-comenzar:hover {

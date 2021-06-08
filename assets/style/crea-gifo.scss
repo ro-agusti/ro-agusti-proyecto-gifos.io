@@ -4,13 +4,15 @@
   padding: 0;
   box-sizing: content-box;
 }
-.hidden{
+.hidden {
   display: none;
 }
-
+main {
+  margin-top: 95px;
+}
 .crear-gifo {
   margin-left: 10.8%;
-  margin-top: 99px;
+  margin-top: 100px;
   margin-right: 26.1%;
   display: flex;
   align-items: center;
@@ -19,7 +21,7 @@
     display: flex;
     align-items: center;
     align-self: start;
-    margin-top: 118.6px;
+    margin-top: 90.6px;
     .camera-img {
       width: 123px;
       height: 192px;
@@ -30,24 +32,23 @@
     }
   }
   .conteiner {
-
     display: flex;
     flex-direction: column;
     width: 100%;
     .cuadrado {
       width: 100%;
-      height: 390px;
-     // border: 1px solid $primary-color;
-     background-image: url(../images/cont-crear-gifo.svg);
-     background-repeat: no-repeat;
-     background-size: contain;
+      height: 340px;
+      border: 1px solid $primary-color;
+      //padding: 50px;
+      display: flex;
       display: flex;
       flex-direction: column;
       justify-content: start;
       align-items: center;
+
       .title {
         //margin: auto;
-        margin-top: 134px;
+        margin-top: 84px;
         width: 100%;
         font-family: $primary-font-family;
         font-weight: bold;
@@ -59,7 +60,7 @@
           color: $green-color;
         }
       }
-      p {
+      .paragraph {
         //margin: auto;
         margin-top: 3px;
         font-family: $secondary-font-family;
@@ -68,9 +69,10 @@
         text-align: center;
         line-height: 29px;
       }
-      .divCamara {
+      .video {
         margin: auto;
-        background-color: blue;
+        border: blue solid 1px;
+        //background-color: blue;
         width: 488px;
         height: 310px;
         //align-self: center;
@@ -81,31 +83,26 @@
       display: flex;
       justify-content: center;
       margin-top: 24px;
+      width: 100%;
       .pasos {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         border-bottom: solid 6.9px $primary-color;
+
         .paso {
           width: 32px;
           height: 32px;
           border: solid 1px $primary-color;
           border-radius: 50%;
           margin-bottom: 19px;
-          cursor: pointer;
+
           .h5 {
             color: $primary-color;
             text-align: center;
             font-family: $secondary-font-family;
             line-height: 32px;
-          }
-
-          &:hover {
-            background-color: $primary-color;
-            .h5 {
-              color: $bg-blanco;
-            }
           }
           &:nth-child(2) {
             margin-left: 26px;
@@ -114,7 +111,7 @@
         }
       }
     }
-    
+
     .paso_active {
       width: 32px;
       height: 32px;
@@ -122,7 +119,7 @@
       border-radius: 50%;
       margin-bottom: 19px;
       background-color: $primary-color;
-      cursor: pointer;
+
       .h5_active {
         color: $bg-blanco;
         text-align: center;
@@ -148,6 +145,7 @@
       color: $primary-color;
       letter-spacing: 0;
       text-align: center;
+      cursor: pointer;
       &:hover {
         background-color: $primary-color;
         color: $bg-blanco;

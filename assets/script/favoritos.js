@@ -1,3 +1,6 @@
+
+import {  getFavoritos } from './index.js';
+
 //console.log(localStorage.getItem(''));
 let storageFavoritos = localStorage.getItem('favoritos');
 let favoritos;
@@ -8,6 +11,8 @@ if (storageFavoritos) {
 }
 const gifsConteiner = document.getElementById('gifsConteiner');
 console.log(favoritos);
+const btnVerMasFav = document.getElementById('btn-verMas-favoritos');
+const emptyFavorite = document.getElementById('emptyFavorite');
 //import {ampliarGifo}  from './index.js';
 
 
@@ -49,7 +54,7 @@ const getGifoForEach = (array) => {
                     //array.slice()
                 }) 
                ampliar.addEventListener('click',()=>{
-                    ampliarGifo(el);
+                    ampliarGifoFav(el);
                 }) 
                 descargar.addEventListener('click', async() => {
                     const apiKey = 'SNJ9a5GbDjgSmOddC8ab03rQXLhxjPvS';
@@ -68,7 +73,9 @@ const getGifoForEach = (array) => {
             })
         });
     } else {
-        console.log('array vacio')
+        btnVerMasFav.classList.add('hidden');
+        emptyFavorite.classList.remove('hidden');
+        //console.log('array vacio')
     }
 
 };
@@ -79,17 +86,20 @@ function removeGifoFromFavoritos( arr, item ) {
     var i = arr.indexOf( item );
     if ( i !== -1 ) {
         arr.splice( i, 1 );
+        if(arr==0){
+            btnVerMasFav.classList.add('hidden');
+            emptyFavorite.classList.remove('hidden');
+            localStorage.clear();
+        }
     }
     
 }
-/* function extractGifo(objeto) {
-    favoritos.filter((el => objeto == el));
-} */
+
 getGifoForEach(favoritos);
 
 //----- ampliar gifo -----
 const ampliarGifoSection = document.getElementById('ampliarGifoSection');
-function ampliarGifo(el) {
+function ampliarGifoFav(el) {
     let divContGn = document.createElement('div');
     divContGn.classList.add('ampliar_gifo');
     ampliarGifoSection.appendChild(divContGn);

@@ -11,32 +11,68 @@ btnNightMode.addEventListener('click', () =>{
 });  */
 
 // ---- searching ----
-
+const buscador = document.getElementById('buscador');
 const search = document.getElementById('buscaGifos');
 const trending = document.getElementById('trending');
+const magnifier1 = document.getElementById('magnifier1');
+const magnifier2 = document.getElementById('magnifier2');
+const contLi = document.getElementById('cont-li');
 window.addEventListener("keydown", (e) => {
+    magnifier1.classList.remove('hidden');
+    magnifier2.classList.add('hidden');
+    buscador.classList.remove('buscador');
+    buscador.classList.add('buscador-con-sugerencias');
+    suggestion(e);
     if (e.key == "Enter") {
-
-
+        magnifier1.classList.add('hidden');
+        magnifier2.classList.remove('hidden');
+        buscador.classList.add('buscador');
+        buscador.classList.remove('buscador-con-sugerencias');
         // console.log(search.value);
         let busqueda = search.value;
         newSearch(busqueda);
- //trending.classList.add('hidden');
+        //trending.classList.add('hidden');
     }
 });
 const favoritos = [];
 let cantidad = 12;
 const btnVerMas = document.getElementById('btnVerMas');
-btnVerMas.addEventListener('click', () => {
+/* btnVerMas.addEventListener('click', () => {
     cantidad += 12;
     console.log(cantidad);
     newSearch(search.value);
-   
+}) */
+//---- funcion de sugerencias -----
+async function suggestion(tag) {
+    const apiKey = 'SNJ9a5GbDjgSmOddC8ab03rQXLhxjPvS';
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${tag}&limit=4&offset=4`;
+    try {
+        const resp = await fetch(url);
+        const info = await resp.json();
+        for (let i = 0; i < 4; i++) {
+            let li = document.createElement('li');
+            let magnifierLI = document.createElement('div');
+            magnifierLI.classList.add('magnifier');
+            li.appendChild(magnifierLI);
+            let h6 = document.createElement('h6');
+            h6.textContent = 'hola'+[i];
+            li.appendChild(h6);
+            contLi.appendChild(li);
+            console.log(info);
+        }
 
-})
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+
+// ---- eliminar btn ver mas al superar los 50 gifos ----
 if (cantidad >= 30) {
     btnVerMas.classList.add('hidden');
 }
+
+// ---- llamar a la API ----
 async function newSearch(gifo) {
 
     const apiKey = 'SNJ9a5GbDjgSmOddC8ab03rQXLhxjPvS';
@@ -112,7 +148,7 @@ async function newSearch(gifo) {
                 corazon.addEventListener('click', () => {
                     getFavoritos(objetoGifo);
                 })
-                descargar.addEventListener('click', async() => {
+                descargar.addEventListener('click', async () => {
                     let a = document.createElement('a');
                     let response = await fetch(`https://media2.giphy.com/media/${objetoGifo.id}/giphy.gif?${apiKey}&rid=giphy.gif`);
                     let file = await response.blob();
@@ -153,15 +189,15 @@ async function newSearch(gifo) {
 } */
 
 //-----funcion cargar local storage ------
-function getFavoritos(newGifo){
+function getFavoritos(newGifo) {
     let itemFavorito = favoritos.find(el => el.id == newGifo.id);
-    if(itemFavorito){
+    if (itemFavorito) {
         console.log('ya es un favorito');
-    }else{
+    } else {
         favoritos.push(newGifo);
         console.log('se agrego al carrito');
         console.log(favoritos);
-        localStorage.setItem('favoritos',JSON.stringify(favoritos));
+        localStorage.setItem('favoritos', JSON.stringify(favoritos));
     }
 }
 
@@ -207,13 +243,13 @@ function ampliarGifo(el) {
     let descargar = document.createElement('div');
     descargar.classList.add('descargar');
     divContAcciones.appendChild(descargar);
-    divClosed.addEventListener('click',()=>{
+    divClosed.addEventListener('click', () => {
         ampliarGifoSection.classList.add('hidden');
     })
-    corazon.addEventListener('click',()=>{
+    corazon.addEventListener('click', () => {
         getFavoritos(el);
     })
-    descargar.addEventListener('click', async() => {
+    descargar.addEventListener('click', async () => {
         const apiKey = 'SNJ9a5GbDjgSmOddC8ab03rQXLhxjPvS';
         let a = document.createElement('a');
         let response = await fetch(`https://media2.giphy.com/media/${el.id}/giphy.gif?${apiKey}&rid=giphy.gif`);
@@ -224,5 +260,5 @@ function ampliarGifo(el) {
         a.click()
     })
 }
-export {ampliarGifo,getFavoritos} ;
+export { ampliarGifo, getFavoritos };
 
