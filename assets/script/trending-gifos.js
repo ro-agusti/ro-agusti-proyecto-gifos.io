@@ -1,6 +1,6 @@
 //---- trending gifos----
 
-import {ampliarGifo,getFavoritos}  from './index.js';
+import { ampliarGifo, getFavoritos } from './index.js';
 
 const leftArrow = document.getElementById('left-arrow');
 const rightArrow = document.getElementById('right-arrow');
@@ -8,20 +8,20 @@ const carrousselConteiner = document.getElementById('carrousselConteiner');
 
 let numGifo = 3;
 seeTrendingGifos(numGifo);
-rightArrow.addEventListener('click',()=>{
-    numGifo+=3;
+rightArrow.addEventListener('click', () => {
+    numGifo += 3;
 
     seeTrendingGifos(numGifo);
 })
-async function seeTrendingGifos(cantGifo){
+async function seeTrendingGifos(cantGifo) {
     const apiKey = 'SNJ9a5GbDjgSmOddC8ab03rQXLhxjPvS';
     const url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=${cantGifo}`;
     //console.log(url);
-    try{
-        const response=await fetch(url);
+    try {
+        const response = await fetch(url);
         const info = await response.json();
 
-        for( let i = 0; i< cantGifo;i++){
+        for (let i = 0; i < cantGifo; i++) {
             let gifoCont = document.createElement('div');
             gifoCont.classList = 'img-carroussel';
             carrousselConteiner.appendChild(gifoCont);
@@ -29,12 +29,12 @@ async function seeTrendingGifos(cantGifo){
             img.src = info.data[i].images.original.url;
             gifoCont.appendChild(img);
             let bgGifo;
-            
+
             let idGifo = info.data[i].id;
             let titleGifo = info.data[i].title;
             let userGifo = info.data[i].username;
             let urlGifo = img.src;
-            img.addEventListener('mouseenter',()=>{
+            img.addEventListener('mouseenter', () => {
                 bgGifo = document.createElement('div');
                 bgGifo.classList.add('bg-img-carroussel');
                 gifoCont.appendChild(bgGifo);
@@ -62,19 +62,30 @@ async function seeTrendingGifos(cantGifo){
                     title: titleGifo,
                     gifo: urlGifo
                 }
-                corazon.addEventListener('click', ()=>{
+                corazon.addEventListener('click', () => {
                     getFavoritos(objetoGifo);
                 })
-                ampliar.addEventListener('click', ()=>{
+                ampliar.addEventListener('click', () => {
                     ampliarGifo(objetoGifo);
                 })
+
+                descargar.addEventListener('click', async () => {
+                    let a = document.createElement('a');
+                    let response = await fetch(`https://media2.giphy.com/media/${objetoGifo.id}/giphy.gif?${apiKey}&rid=giphy.gif`);
+                    let file = await response.blob();
+                    a.download = objetoGifo.title;
+                    a.href = window.URL.createObjectURL(file);
+                    a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+                    a.click()
+                })
+
             });
             gifoCont.addEventListener('mouseleave', () => {
                 bgGifo.classList.remove('bg-img-carroussel');
             })
         }
 
-    } catch (err){
+    } catch (err) {
         console.log(err);
     }
 }

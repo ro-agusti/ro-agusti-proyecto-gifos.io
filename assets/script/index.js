@@ -58,7 +58,6 @@ async function newSearch(gifo) {
         const lineDiv = document.createElement('div');
         lineDiv.classList.add('line-div');
         searching.appendChild(lineDiv);
-        //console.log(lineDiv);
         const typeOfGifo = document.createElement('h2');
         typeOfGifo.classList.add('type-of-gifo');
         typeOfGifo.textContent = gifo.toUpperCase();
@@ -73,8 +72,6 @@ async function newSearch(gifo) {
             conteiner.appendChild(gifoCont);
             let img = document.createElement('img');
             img.src = info.data[i].images.original.url;
-            //img.id = `gifoID${info.data[i].id}`;
-            //console.log(img);
             gifoCont.appendChild(img);
             let bgGifo;
 
@@ -98,6 +95,8 @@ async function newSearch(gifo) {
                 let aDescargar = document.createElement('a');
                 aDescargar.href = '#';
                 acciones.appendChild(aDescargar);
+
+
                 let descargar = document.createElement('div');
                 descargar.classList = 'descargar';
                 aDescargar.appendChild(descargar);
@@ -113,13 +112,14 @@ async function newSearch(gifo) {
                 corazon.addEventListener('click', () => {
                     getFavoritos(objetoGifo);
                 })
-                descargar.addEventListener('click', () => {
-                    console.log(aDescargar);
-                    /* fetch(img)
-                        .then(res=>res.blob())
-                        .then(img=>{
-                            aDescargar.href=URL.createObjectURL(img);
-                        }) */
+                descargar.addEventListener('click', async() => {
+                    let a = document.createElement('a');
+                    let response = await fetch(`https://media2.giphy.com/media/${objetoGifo.id}/giphy.gif?${apiKey}&rid=giphy.gif`);
+                    let file = await response.blob();
+                    a.download = objetoGifo.title;
+                    a.href = window.URL.createObjectURL(file);
+                    a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+                    a.click()
                 })
                 ampliar.addEventListener('click', () => {
                     ampliarGifo(objetoGifo);
@@ -137,6 +137,20 @@ async function newSearch(gifo) {
     }
 
 }
+
+//---- funcion para descargar gifo -----
+/* function downloadGifo(el){
+    let a = document.createElement('a');
+                    let respuesta = await fetch(`https://media2.giphy.com/media/${el.id}/giphy.gif?${apiKey}&rid=giphy.gif`);
+                    let file = await respuesta.blob();
+                    // use download attribute https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#Attributes
+                    a.download = el.title;
+                    a.href = window.URL.createObjectURL(file);
+                    //store download url in javascript https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes#JavaScript_access
+                    a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+                    //click on element to start download
+                    a.click()
+} */
 
 //-----funcion cargar local storage ------
 function getFavoritos(newGifo){
@@ -198,6 +212,16 @@ function ampliarGifo(el) {
     })
     corazon.addEventListener('click',()=>{
         getFavoritos(el);
+    })
+    descargar.addEventListener('click', async() => {
+        const apiKey = 'SNJ9a5GbDjgSmOddC8ab03rQXLhxjPvS';
+        let a = document.createElement('a');
+        let response = await fetch(`https://media2.giphy.com/media/${el.id}/giphy.gif?${apiKey}&rid=giphy.gif`);
+        let file = await response.blob();
+        a.download = el.title;
+        a.href = window.URL.createObjectURL(file);
+        a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+        a.click()
     })
 }
 export {ampliarGifo,getFavoritos} ;
